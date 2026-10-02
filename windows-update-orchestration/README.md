@@ -124,3 +124,17 @@ The workflow is designed around exception-based operations: routine assessment i
 This project is a sanitized lab recreation intended to demonstrate architecture, automation design, security awareness, and operational thinking.
 
 It does not contain proprietary employer code, production credentials, customer data, internal URLs, or confidential infrastructure details.
+
+
+### Validation Example
+
+The included sample output was generated from a Windows 11 lab endpoint.
+
+In the example:
+
+- no applicable Windows updates were pending
+- the endpoint still reported `AttentionRequired`
+- the condition was caused by a pending reboot indicator
+- the workflow correctly separated update state from reboot state
+
+This demonstrates why patch assessment should consider more than update count alone.
