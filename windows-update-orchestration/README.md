@@ -47,30 +47,32 @@ A production implementation should include:
 - rollback planning
 - separation between production and non-production environments
 
-## Repository Status
-
-This is a sanitized lab recreation intended to demonstrate architecture and operational thinking. It does not contain proprietary production code.
-
-
 ## Proof of Work
 
 ### PowerShell Patch Assessment
 
 [`Invoke-PatchAssessment.ps1`](./Invoke-PatchAssessment.ps1)
 
-This PowerShell artifact demonstrates a read-only pre-patching assessment workflow.
+This PowerShell artifact demonstrates a read-only pre-patching assessment workflow designed to support larger Windows update orchestration processes.
 
-It collects:
+The script collects:
 
 - Windows Update service state
 - operating system and build information
 - pending reboot indicators
 - applicable Windows updates
-- KB numbers and update severity
-- downloaded/reboot-required state
+- KB article numbers and update severity
+- downloaded and reboot-required status
 
-The script produces both JSON and CSV output so the results can be consumed by reporting, orchestration, or monitoring systems.
+The assessment produces both JSON and CSV output so the results can be consumed by reporting, orchestration, monitoring, or downstream automation systems.
 
-The published version intentionally does **not** install patches, restart services, or modify endpoint configuration.
+The published version intentionally does **not** install patches, restart services, reboot endpoints, or modify endpoint configuration.
 
-This is a sanitized lab implementation designed to demonstrate the operational pattern without exposing proprietary production code.
+This is a sanitized lab implementation designed to demonstrate the operational pattern without exposing proprietary production code, credentials, customer information, or internal infrastructure details.
+
+## Usage
+
+Run the assessment from PowerShell:
+
+```powershell
+.\Invoke-PatchAssessment.ps1
