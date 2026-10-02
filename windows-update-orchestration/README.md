@@ -76,15 +76,25 @@ Run the assessment from PowerShell:
 
 ```powershell
 .\Invoke-PatchAssessment.ps1
+```
 
 Specify a custom output directory:
+
+```powershell
 .\Invoke-PatchAssessment.ps1 -OutputDirectory C:\Temp\PatchReports
+```
 
 Include applicable driver updates:
+
+```powershell
 .\Invoke-PatchAssessment.ps1 -IncludeDrivers
+```
 
 The script creates structured reports in the selected output directory.
+
 Example:
+
+```text
 Windows Patch Assessment
 ------------------------
 Computer:        LAB-WIN11-01
@@ -93,16 +103,24 @@ Pending updates: 4
 Pending reboot:  False
 JSON report:     .\reports\patch-assessment-20261002-152300.json
 CSV report:      .\reports\pending-updates-20261002-152300.csv
+```
 
-Output
+### Output
+
 The JSON report is intended for structured downstream use such as:
+
 - automation workflows
 - orchestration platforms
 - dashboards
 - monitoring systems
 - centralized reporting
+
 The CSV report provides a technician-friendly view of pending updates for review and follow-up.
+
 The workflow is designed around exception-based operations: routine assessment is automated, while systems requiring attention remain visible for human investigation.
-Repository Status
+
+## Repository Status
+
 This project is a sanitized lab recreation intended to demonstrate architecture, automation design, security awareness, and operational thinking.
+
 It does not contain proprietary employer code, production credentials, customer data, internal URLs, or confidential infrastructure details.
